@@ -1,0 +1,2 @@
+ACTION=="add", KERNEL=="sd[a-z]?", SUBSYSTEMS=="usb", RUN+="__ROOT__/scripts/start.sh %N"
+ACTION=="remove", KERNEL=="sd[a-z]?", SUBSYSTEMS=="usb", RUN+="__ROOT__/scripts/stop.sh %N"

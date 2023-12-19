@@ -1,0 +1,82 @@
+27-11-23 15:35:05 - /dev/sda1 disconnected
+27-11-23 15:35:13 - Start connection new device: /dev/sda1.
+27-11-23 15:35:13 - /dev/sda1: File system: devtmpfs. Free Space: 4096
+27-11-23 15:35:13 - /dev/sda1 mounted on /home/otsu/service_updater/mnt/sda1
+27-11-23 15:35:13 - Connected /dev/sda1
+27-11-23 15:37:48 - /dev/sda1 disconnected
+27-11-23 15:37:52 - Start connection new device: /dev/sda1.
+27-11-23 15:37:52 - /dev/sda1: File system: devtmpfs. Free Space: 4096
+27-11-23 15:37:52 - /dev/sda1 mounted on /home/otsu/service_updater/mnt/sda1
+27-11-23 15:37:52 - Connected /dev/sda1
+27-11-23 15:43:52 - /dev/sda1 disconnected
+27-11-23 15:43:55 - Start connection new device: /dev/sda1.
+27-11-23 15:43:57 - /dev/sda1: File system: vfat. Free Space: 15129256
+27-11-23 15:43:57 - /dev/sda1 mounted on /home/otsu/service_updater/mnt/sda1
+27-11-23 15:43:57 - Connected /dev/sda1
+27-11-23 15:47:21 - /dev/sda1 disconnected
+27-11-23 15:47:25 - Start connection new device: /dev/sda1.
+27-11-23 15:47:26 - /dev/sda1: File system: vfat. Free Space: 15129256
+27-11-23 15:47:26 - /dev/sda1 mounted on /home/otsu/service_updater/mnt/sda1
+27-11-23 15:47:26 - Connected /dev/sda1
+27-11-23 15:48:37 - /dev/sda1 disconnected
+27-11-23 15:48:41 - Start connection new device: /dev/sda1.
+27-11-23 15:48:42 - /dev/sda1: File system: vfat. Free Space: 15129256
+27-11-23 15:48:42 - /dev/sda1 mounted on /home/otsu/service_updater/mnt/sda1
+27-11-23 15:48:42 - Connected /dev/sda1
+27-11-23 15:48:52 - /dev/sda1 disconnected
+29-11-23 09:09:50 - Start connection new device: /dev/sda1.
+29-11-23 09:09:51 - /dev/sda1: File system: vfat. Free Space: 15129256
+29-11-23 09:09:51 - /dev/sda1 mounted on /home/otsu/service_updater/mnt/sda1
+29-11-23 09:09:51 - Connected /dev/sda1
+29-11-23 09:09:56 - /dev/sda1 disconnected
+29-11-23 09:17:55 - Start connection new device: /dev/sda1.
+29-11-23 09:17:57 - /dev/sda1: File system: vfat. Free Space: 15129256
+29-11-23 09:17:57 - /dev/sda1 mounted on /home/otsu/service_updater/mnt/sda1
+29-11-23 09:17:57 - Connected /dev/sda1
+29-11-23 09:18:03 - /dev/sda1 disconnected
+29-11-23 09:19:38 - Start connection new device: /dev/sda1.
+29-11-23 09:19:40 - /dev/sda1: File system: vfat. Free Space: 15129256
+29-11-23 09:19:40 - /dev/sda1 mounted on /home/otsu/service_updater/mnt/sda1
+29-11-23 09:19:40 - Connected /dev/sda1
+29-11-23 09:21:09 - /dev/sda1 disconnected
+29-11-23 09:33:24 - Start connection new device: /dev/sda1.
+29-11-23 09:33:25 - /dev/sda1: File system: vfat. Free Space: 15129256
+29-11-23 09:33:25 - /dev/sda1 mounted on /home/otsu/service_updater/mnt/sda1
+29-11-23 09:33:25 - Connected /dev/sda1
+29-11-23 09:33:34 - /dev/sda1 disconnected
+29-11-23 09:34:19 - Start connection new device: /dev/sda1.
+29-11-23 09:34:20 - /dev/sda1: File system: vfat. Free Space: 15129256
+29-11-23 09:34:20 - /dev/sda1 mounted on /home/otsu/service_updater/mnt/sda1
+29-11-23 09:34:20 - Connected /dev/sda1
+29-11-23 09:34:31 - /dev/sda1 disconnected
+29-11-23 09:34:40 - Start connection new device: /dev/sda1.
+29-11-23 09:34:41 - /dev/sda1: File system: vfat. Free Space: 15129256
+29-11-23 09:34:41 - /dev/sda1 mounted on /home/otsu/service_updater/mnt/sda1
+29-11-23 09:34:41 - Connected /dev/sda1
+29-11-23 09:35:23 - /dev/sda1 disconnected
+29-11-23 09:35:52 - Start connection new device: /dev/sda1.
+29-11-23 09:35:53 - /dev/sda1: File system: vfat. Free Space: 15129256
+29-11-23 09:35:53 - /dev/sda1 mounted on /home/otsu/service_updater/mnt/sda1
+29-11-23 09:35:53 - Connected /dev/sda1
+29-11-23 09:36:10 - /dev/sda1 disconnected
+29-11-23 09:45:14 - Start connection new device: /dev/sda1.
+29-11-23 09:45:15 - /dev/sda1: File system: vfat. Free Space: 15129256
+29-11-23 09:45:15 - /dev/sda1 mounted on /home/otsu/service_updater/mnt/sda1
+29-11-23 09:45:15 - Connected /dev/sda1
+29-11-23 10:06:51 - Start connection new device: /dev/sda1.
+29-11-23 10:06:52 - /dev/sda1: File system: devtmpfs. Free Space: 4096
+29-11-23 10:06:53 - /dev/sda1 mounted on /home/otsu/service_updater/mnt/sda1
+29-11-23 10:06:53 - Connected /dev/sda1
+29-11-23 10:06:53 - Start install /dev/sda1
+15-12-23 16:01:57 - Start connection new device: /dev/sda1.
+15-12-23 16:01:58 - /dev/sda1: File system: devtmpfs. Free Space: 4096
+15-12-23 16:02:00 - /dev/sda1 mounted on /home/otsu/service_updater/mnt/sda1
+15-12-23 16:02:00 - Connected /dev/sda1
+15-12-23 16:02:00 - Start install /dev/sda1
+15-12-23 16:08:17 - /dev/sda1 disconnected
+15-12-23 16:08:24 - Start connection new device: /dev/sdb1.
+15-12-23 16:08:25 - /dev/sdb1: File system: vfat. Free Space: 14744688
+15-12-23 16:08:25 - /dev/sdb1 mounted on /home/otsu/service_updater/mnt/sdb1
+15-12-23 16:08:25 - Connected /dev/sdb1
+15-12-23 16:08:25 - Start install /dev/sdb1
+15-12-23 16:09:44 - /dev/sdb1 disconnected

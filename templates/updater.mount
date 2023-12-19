@@ -1,0 +1,11 @@
+[Unit]
+Description=Installer-updater Service
+After=multi-user.target
+
+[Service]
+ExecStartPre=__ROOT__/scripts/pre.sh %N
+ExecStart=__ROOT__/scripts/start.sh %N
+ExecStop=__ROOT__/scripts/stop.sh %N
+
+[Install]
+WantedBy=default.target
