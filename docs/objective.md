@@ -15,13 +15,15 @@
 synapse-log/
 ├─ logs/
 │  ├─ synapse/
-│  ├─ updater/
+│  ├─ installer/
 │  │  ├─ log.txt
 ├─ cache/
 ├─ manual-selected/
 ├─ current-states
 ```
-5. TODO Вероятно следует проработать отмену запуска Install
+
+TODO Вероятно следует проработать отмену запуска Install
+TODO утерян смысл директории disk/synapse-log/current-states
 
 ### Install
 1. Проверить наличие disk/get-synapse-log:
