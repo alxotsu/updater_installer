@@ -4,6 +4,8 @@ path=$(readlink -f $0)
 root=${path%/*/*/*}
 
 DEVICE_NAME=$1
+$root/scripts/subscripts/logger.sh "$DEVICE_NAME: Connected"
+
 sleep 1
 device_info=$(df -T $DEVICE_NAME | tail -n 1 | awk '{print $2} {print $5}')
 file_system=$(echo $device_info | cut -d " " -f 1)
@@ -16,12 +18,10 @@ mkdir $mount_point
 sudo chmod 777 $mount_point 
 sudo systemd-mount $DEVICE_NAME $mount_point
 
-$root/scripts/subscripts/logger.sh "$DEVICE_NAME mounted on $mount_point"
-
-$root/scripts/subscripts/logger.sh "Connected $DEVICE_NAME"
+$root/scripts/subscripts/logger.sh "$DEVICE_NAME: mounted on $mount_point"
 
 if [ ! -f $mount_point/synapse-key ] || [ ! -r $mount_point/synapse-key ]; then
-    $root/scripts/subscripts/logger.sh "Cannot find synapse-key file on $DEVICE_NAME or cannot read"
+    $root/scripts/subscripts/logger.sh "$DEVICE_NAME: Cannot read"
     exit 0
 fi
 
@@ -29,8 +29,8 @@ rm $mount_point/synapse-log.tar
 rm -r $mount_point/synapse-log
 mkdir $mount_point/synapse-log
 
-if [ ! -d $mount_point/synapse-log ]; then
-    $root/scripts/subscripts/logger.sh "Cannot recreate synapse-log file on $DEVICE_NAME"
+if [ $? -ne 0 ]; then
+    $root/scripts/subscripts/logger.sh "$DEVICE_NAME: Cannot write"
     exit 0
 fi
 

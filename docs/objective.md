@@ -22,8 +22,9 @@ synapse-log/
 ├─ current-states
 ```
 
-TODO Вероятно следует проработать отмену запуска Install
-TODO утерян смысл директории disk/synapse-log/current-states
+>TODO Вероятно следует проработать отмену запуска Install
+
+>TODO утерян смысл директории disk/synapse-log/current-states
 
 ### Install
 1. Проверить наличие disk/get-synapse-log:
