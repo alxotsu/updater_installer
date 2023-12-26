@@ -23,7 +23,7 @@ fi
 logs_types = ('device', 'driver', 'web', 'master', 'session_manager', 'user_manager')
 for log_type in $log_types; do
   log_path="var/log/$log_type.log"
-  files_to_copy += log_path
+  files_to_copy+=log_path
 done
 
 #for log_file in `ls -1 /srv/synapse/var/log`;
@@ -32,20 +32,23 @@ while [ 1 ]; do
     flag=0
     for log_type in $log_types; do
       log_path="var/log/$log_type.log.$log_index"
-
-      /srv/synapse/
-      files_to_copy += log_path
+      if [ -f /srv/synapse/$logpath ]; then 
+	flag=1
+      	files_to_copy+=log_path
+      fi
     done
+    if [ ! $flag ]; then
+      break
+    fi
     $log_index++
 done
 
+for filepath in files_to_copy do 
 
-
-
-
-
-
-if [[ $filepath == /* ]]; then
+    if [[ $filepath == *var/log/*]]; then
+      frompath=/srv/synapse/$filepath
+      topath="$disk/synapse-log/logs/synapse/$(echo $frompath | rev | cut -d'/' -f 1 | rev)"
+    elif [[ $filepath == /* ]]; then
       frompath=$filepath
       topath=$disk/synapse-log/manual-selected/other$frompath
     else
@@ -53,14 +56,16 @@ if [[ $filepath == /* ]]; then
       topath=$disk/synapse-log/manual-selected/synapse/$filepath
     fi
 
-$root/scripts/subscripts/logger.sh "$DEVICE_NAME: Coping manual selected $frompath -> $topath" $DEVICE_NAME
+    $root/scripts/subscripts/logger.sh "$DEVICE_NAME: Coping $frompath -> $topath" $DEVICE_NAME
 
-cp -flr $frompath $topath
-result=$?
-if [ $result -ne 0 ];
-  # TODO find memory overflow error code
-  $root/scripts/subscripts/logger.sh "$DEVICE_NAME: Cannot copy by code $result" $DEVICE_NAME
-fi
+    cp -flr $frompath $topath
+    result=$?
+    if [ $result -ne 0 ];
+      # TODO find memory overflow error code
+      $root/scripts/subscripts/logger.sh "$DEVICE_NAME: Cannot copy by code $result" $DEVICE_NAME
+    fi
+
+done
 
 
 $root/scripts/subscripts/logger.sh "$DEVICE_NAME: End install" $DEVICE_NAME
