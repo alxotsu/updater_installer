@@ -4,7 +4,6 @@ path=$(readlink -f $0)
 root=${path%/*/*/*}
 
 DEVICE_NAME=$1
-$root/scripts/subscripts/logger.sh "$DEVICE_NAME: Connected"
 
 sleep 1
 device_info=$(df -T $DEVICE_NAME | tail -n 1 | awk '{print $2} {print $5}')
@@ -42,4 +41,5 @@ mkdir $mount_point/synapse-log/cache
 mkdir $mount_point/synapse-log/manual-selected
 mkdir $mount_point/synapse-log/current-states
 
-$root/scripts/subscripts/install.sh $DEVICE_NAME $mount_point
+$root/scripts/subscripts/logger.sh "$DEVICE_NAME: Connected" $DEVICE_NAME
+$root/scripts/subscripts/install.sh $DEVICE_NAME

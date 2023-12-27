@@ -5,6 +5,8 @@ root=${path%/*/*/*}
 
 log_str="$(date +"%d-%m-%y %T") - $1"
 
+# echo $log_str
+
 server_log=$root/logs/log.txt
 echo $log_str >> $server_log
 
