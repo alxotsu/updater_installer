@@ -36,7 +36,6 @@ fi
 mkdir $mount_point/synapse-log/logs
 mkdir $mount_point/synapse-log/logs/synapse
 mkdir $mount_point/synapse-log/logs/installer
-touch $mount_point/synapse-log/logs/installer/log.txt
 mkdir $mount_point/synapse-log/cache
 mkdir $mount_point/synapse-log/manual-selected
 mkdir $mount_point/synapse-log/current-states
