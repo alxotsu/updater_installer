@@ -55,8 +55,8 @@ for filepath in ${files_to_copy[*]}; do
     fi
     $root/scripts/subscripts/logger.sh "$DEVICE_NAME: Coping $frompath -> $topath" $DEVICE_NAME
 
-    mkdir -p "$disk$topath"
-    cp -rf $frompath "$disk$topath"
+    mkdir -p "$disk${topath%/*}"
+    sudo cp -rf $frompath "$disk$topath"
     result=$?
     if [ $result -ne 0 ]; then
       $root/scripts/subscripts/logger.sh "$DEVICE_NAME: Cannot copy with code $result" $DEVICE_NAME
@@ -69,4 +69,4 @@ for filepath in ${files_to_copy[*]}; do
 done
 
 $root/scripts/subscripts/logger.sh "$DEVICE_NAME: End install" $DEVICE_NAME
-$root/scripts/subscripts/update.sh $DEVICE_NAME
+sudo $root/scripts/subscripts/update.sh $DEVICE_NAME

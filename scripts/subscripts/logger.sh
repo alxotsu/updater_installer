@@ -5,7 +5,7 @@ root=${path%/*/*/*}
 
 log_str="$(date +"%d-%m-%y %T") - $1"
 
-# echo $log_str
+echo $log_str & disown
 
 server_log=$root/logs/installer.log
 echo $log_str >> $server_log

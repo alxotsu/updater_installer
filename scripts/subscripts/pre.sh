@@ -41,4 +41,4 @@ mkdir $mount_point/synapse-log/manual-selected
 mkdir $mount_point/synapse-log/current-states
 
 $root/scripts/subscripts/logger.sh "$DEVICE_NAME: Connected" $DEVICE_NAME
-$root/scripts/subscripts/install.sh $DEVICE_NAME
+sudo $root/scripts/subscripts/install.sh $DEVICE_NAME
