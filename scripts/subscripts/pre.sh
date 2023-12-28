@@ -24,7 +24,7 @@ if [ ! -f $mount_point/synapse-key ] || [ ! -r $mount_point/synapse-key ]; then
     exit 0
 fi
 
-rm $mount_point/synapse-log.tar
+rm $mount_point/synapse-log.tar*
 rm -r $mount_point/synapse-log
 mkdir $mount_point/synapse-log
 
@@ -35,10 +35,10 @@ fi
 
 mkdir $mount_point/synapse-log/logs
 mkdir $mount_point/synapse-log/logs/synapse
-mkdir $mount_point/synapse-log/logs/installer
 mkdir $mount_point/synapse-log/cache
 mkdir $mount_point/synapse-log/manual-selected
 mkdir $mount_point/synapse-log/current-states
+mkdir -p $mount_point/logs
 
 $root/scripts/subscripts/logger.sh "$DEVICE_NAME: Connected" $DEVICE_NAME
 sudo $root/scripts/subscripts/install.sh $DEVICE_NAME

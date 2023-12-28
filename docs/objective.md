@@ -13,13 +13,11 @@
 4. в disk/synapse-log создать следующую структуру:
 ```
 synapse-log/
-├─ logs/
-│  ├─ synapse/
-│  ├─ installer/
-│  │  ├─ log.txt
-├─ cache/
-├─ manual-selected/
-├─ current-states
+|- logs/
+|  |- synapse/
+|- cache/
+|- manual-selected/
+|- current-states
 ```
 
 >TODO Вероятно следует проработать отмену запуска Install

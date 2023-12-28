@@ -6,7 +6,9 @@ root=${path%/*/*/*}
 DEVICE_NAME=$1
 disk="$root/mnt/$(echo $DEVICE_NAME | rev | cut -d'/' -f 1 | rev)"
 
-sleep 3
+
+# TODO copy dirty cache and htop
+
 $root/scripts/subscripts/logger.sh "$DEVICE_NAME: Start install" $DEVICE_NAME
 
 if [ -f $disk/get-synapse-log ]; then
@@ -65,8 +67,16 @@ for filepath in ${files_to_copy[*]}; do
         break
       fi
     fi
-
 done
+
+# TODO have problems with memory using
+touch $disk/synapse-log.tar.gz
+$root/scripts/subscripts/logger.sh "$DEVICE_NAME: Start compressing $disk/synapse-log -> $disk/synapse-log.tar.gz" $DEVICE_NAME
+pwdnow=$(pwd)
+cd $disk
+tar -cvzf synapse-log.tar.gz synapse-log && rm -r synapse-log
+cd $pwdnow
+$root/scripts/subscripts/logger.sh "$DEVICE_NAME: End compressing synapse-log." $DEVICE_NAME
 
 $root/scripts/subscripts/logger.sh "$DEVICE_NAME: End install" $DEVICE_NAME
 sudo $root/scripts/subscripts/update.sh $DEVICE_NAME
