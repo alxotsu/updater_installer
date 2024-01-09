@@ -6,10 +6,11 @@ root=${path%/*/*/*}
 DEVICE_NAME=$1
 disk="$root/mnt/$(echo $DEVICE_NAME | rev | cut -d'/' -f 1 | rev)"
 
-
-# TODO copy dirty cache and htop
-
 $root/scripts/subscripts/logger.sh "$DEVICE_NAME: Start install" $DEVICE_NAME
+
+echo "CPU: $(top -bn1 | grep 'Cpu(s)' | awk '{print $2 + $4}')%" >> $disk/synapse-log/cache/htop
+echo "RAM: $(top -bn1 | grep 'Cpu(s)' | awk '{print $2 + $4}')%" >> $disk/synapse-log/cache/htop
+echo -e "\nTop 10 Procs:\n$(ps -eo %cpu,%mem,cmd --sort=-%cpu | awk 'NR<=11 {print $1, $2, $3}')" >> $disk/synapse-log/cache/htop
 
 if [ -f $disk/get-synapse-log ]; then
   $root/scripts/subscripts/logger.sh "$DEVICE_NAME: Found get-synapse-log file"
@@ -19,7 +20,6 @@ if [ -f $disk/get-synapse-log ]; then
 else
   $root/scripts/subscripts/logger.sh "$DEVICE_NAME: Not found get-synapse-log file"
 fi
-
 
 declare -a logs_types=('device' 'driver' 'web' 'master' 'session_manager' 'user_manager')
 for log_type in ${logs_types[*]}; do
