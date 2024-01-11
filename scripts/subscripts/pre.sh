@@ -17,6 +17,18 @@ mkdir $mount_point
 sudo chmod 777 $mount_point 
 sudo systemd-mount $DEVICE_NAME $mount_point
 
+res=$?
+if [ $res -ne 0 ] && [ $res -ne 141 ]; then
+  # algoritm
+  # extract disk
+  # sudo system-mount --umount $mount_point
+  # remove .mount
+  # sudo systemctl daemon-reload
+  # reboot server
+  $root/scripts/subscripts/logger.sh "$DEVICE_NAME: FATAL ERROR cannot mount on $mount_point error code: $res"
+  exit $res
+fi
+
 $root/scripts/subscripts/logger.sh "$DEVICE_NAME: mounted on $mount_point"
 
 if [ ! -f $mount_point/synapse-key ] || [ ! -r $mount_point/synapse-key ]; then

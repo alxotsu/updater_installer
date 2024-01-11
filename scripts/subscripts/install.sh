@@ -71,10 +71,12 @@ done
 
 # TODO have problems with memory using
 touch $disk/synapse-log.tar.gz
-$root/scripts/subscripts/logger.sh "$DEVICE_NAME: Start compressing $disk/synapse-log -> $disk/synapse-log.tar.gz" $DEVICE_NAME
+$root/scripts/subscripts/logger.sh "$DEVICE_NAME: Start compressing synapse-log" $DEVICE_NAME
 pwdnow=$(pwd)
 cd $disk
-tar -cvzf synapse-log.tar.gz synapse-log && rm -r synapse-log
+tar -cvzf synapse-log.tar.gz synapse-log
+wait
+rm -r synapse-log
 cd $pwdnow
 $root/scripts/subscripts/logger.sh "$DEVICE_NAME: End compressing synapse-log." $DEVICE_NAME
 
