@@ -6,44 +6,44 @@
 
 ### Pre script
 1. Монтирование флешки
+
 2. Лог формата флешки, Остатка свободного места.
+
 3. Проверка на чтение и запись. При провале любой из проверок отменять скрипт.
 	- На чтение: попытка прочесть файл disk/synapse-key
-	- На запись: попытка удалить затем создать директорию disk/synapse-log
-4. в disk/synapse-log создать следующую структуру:
-```
-synapse-log/
-|- logs/
-|  |- synapse/
-|- cache/
-|- manual-selected/
-|- current-states
-```
-
->TODO Вероятно следует проработать отмену запуска Install
-
->TODO утерян смысл директории disk/synapse-log/current-states
+	- На запись: попытка перезаписать в disk/synapse-key содержимое project/synapse-key
 
 ### Install
-1. Проверить наличие disk/get-synapse-log:
+1. создать директорию disk/synapse-log-YYYYMMDD-hhmmss (далее disk/synapse-log)
 
-В файле может быть указан список путей относительно корня synapse. Необходимо скопировать файлы по указанным путям из synapse в disk/synapse-log/manual-selected/ с сохранением относительных путей
+2. в disk/synapse-log создать следующую структуру:
+```
+synapse-log/
+|- dirty-cache/
+|- manual-selected.tar.gz
+|- synapse-logs.tar.gz
+|- hostid
+|- htop
+```
 
-2. disk/synapse-log/cache/ скопировать dirty cache, а также записать htop:
+3. В файл disk/synapse-log/hostid записать вывод скрипта hostid
+
+4. В disk/synapse-log/dirty-cache/ скопировать грязный файловый кэш
+
+5. В файл disk/synapse-log/htop записать htop:
 	- Общий CPU по всем процессам
 	- RAM
 	- Данные по топ 10 процессам по потреблению CPU
 
-3. Копировать в disk/synapse-log/logs/synapse/ логи synapse, пока хватит места на флешке. Начинать с самых последних логов
+6. Проверить наличие disk/get-synapse-log:
+В файле может быть указан список путей относительно корня synapse. Необходимо скопировать файлы по указанным путям из synapse в disk/synapse-log/manual-selected.tar.gz с сохранением относительных путей
+	- В будущем get-synapse-log будет зашифрован
 
-4. Возможно здесь будет шифрование disk/synapse-log
+7. Копировать в disk/synapse-log/synapse-logs.tar.gz логи synapse, пока хватит места на флешке. Начинать с самых свежих логов
 
-5. disk/synapse-log сжать в .tar и в таком виде оставить на флешке
+8. В будущем вышеуказанные архивы и htop должны будут шифроваться
 
 ### Update
-1. Узнать текущую версию synapse. Создать новую директорию с указанием версии srv/synapse-{version}, копировать туда srv/synapse.
-2. Остановить сервис synapse
-3. Скопировать файлы из disk/updater в srv/synapse c заменой.
-4. Перезапустить сервис synapse
-
-### Post
+1. Проверить наличие файла disk/synapse-update. Прочитать первый мегабайт в случае наличия.
+2. Полученный мегабайт расшифровать и распаковать -> инсталяционный скрипт
+3. Сверить deployid скрипта с deployid на хосте. deployid инсталятора должен быть больше на 1. Запустить скрипт в случае успешной проверки
