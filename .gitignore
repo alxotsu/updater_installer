@@ -2,4 +2,6 @@
 .vscode/
 logs/
 mnt/
+buffer/
 .Trash-1000/
+synapse-key
