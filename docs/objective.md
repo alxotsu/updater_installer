@@ -10,8 +10,8 @@
 2. Лог формата флешки, Остатка свободного места.
 
 3. Проверка на чтение и запись. При провале любой из проверок отменять скрипт.
-	- На чтение: попытка прочесть файл disk/synapse-key
-	- На запись: попытка перезаписать в disk/synapse-key содержимое project/synapse-key
+	- На чтение: попытка перезаписать в project/synapse-key содержимое disk/synapse-key
+	- На запись: проверка начилия прав на запись disk/synapse-key
 
 ### Install
 1. создать директорию disk/synapse-log-YYYYMMDD-hhmmss (далее disk/synapse-log)
