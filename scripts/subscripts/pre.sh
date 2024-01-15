@@ -31,14 +31,14 @@ fi
 
 $root/scripts/subscripts/logger.sh "$DEVICE_NAME: mounted on $mount_point"
 
-if [ ! -f $mount_point/synapse-key ] || [ ! -r $mount_point/synapse-key ]; then
+cp -f $mount_point/synapse-key $root/synapse-key
+
+if [ $? -ne 0 ]; then
     $root/scripts/subscripts/logger.sh "$DEVICE_NAME: Cannot read"
     exit 0
 fi
 
-cp -f $root/synapse-key $mount_point/synapse-key
-
-if [ $? -ne 0 ]; then
+if [ ! -w $mount_point/synapse-key ]; then
     $root/scripts/subscripts/logger.sh "$DEVICE_NAME: Cannot write"
     exit 0
 fi
